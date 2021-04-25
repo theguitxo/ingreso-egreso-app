@@ -7,6 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { ChartsModule } from 'ng2-charts';
+
 import { environment } from 'src/environments/environment';
 
 import { StoreModule } from '@ngrx/store';
@@ -23,6 +25,7 @@ import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { OrdenIngresoPipe } from './pipes/orden-ingreso.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     DetalleComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrdenIngresoPipe
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
